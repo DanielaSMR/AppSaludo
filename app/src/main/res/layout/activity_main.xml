@@ -11,28 +11,36 @@
         android:id="@+id/titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Aprieta este boton"
+        android:text="Escribe tu nombre"
         android:gravity="center"
-        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/mensaje"
+        android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@id/btnHello"
         android:inputType="textCapSentences|textAutoCorrect"
-        app:layout_constraintTop_toBottomOf="@id/titulo"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:singleLine = "true"
+        android:maxLines = "1" />
 
 
     <Button
-        android:id="@+id/calculate_button"
+        android:id="@+id/btnHello"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pulsa"
+        android:text="Pulsa Aqui"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mensaje"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
