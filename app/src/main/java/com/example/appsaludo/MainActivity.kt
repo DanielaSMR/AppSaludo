@@ -1,6 +1,7 @@
 package com.example.appsaludo
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -21,14 +22,10 @@ class MainActivity : AppCompatActivity() {
         val btnHello:AppCompatButton = findViewById(R.id.btnHello)
         btnHello.setOnClickListener {
                 val name = etName.text.toString()
-                //Log.i("Test", "Boton Pulsado")
-                //Toast.makeText(this,"Hola $name!", Toast.LENGTH_LONG).show()
-            if(name.isNotEmpty()){
-                Snackbar.make(btnHello,"Hola $name!", Snackbar.LENGTH_SHORT)
-                    .setAnchorView(btnHello)
-                    .setAction("CLOSE"){finishAffinity()}
-                    .show()
-            }
+                val intentGA = Intent(this, OtraPantallaActivity::class.java)
+                intentGA.putExtra("EXTRA_NAME", name)
+                startActivity(intentGA)
+
         }
     }
 }
